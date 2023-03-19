@@ -125,32 +125,30 @@
                             </p>
                             <div id="more-unbreak">
                                 <p>
-                                    Our MIDS capstone, product attempted to  provide additional insights 
+                                    Our capstone project at UC Berkeley's MIDS coursework in fall 2022, was named MakeSense. In this project we attempted to  provide additional insights 
                                     to Twitch’s analytics by interpreting chat behavior and providing 
-                                    sentiment scores of chat messages during a stream.
+                                    sentiment scores of chat messages during a stream. Our project "MakeSense" translated performance metrics of Twitch streams into a scoring system, 
+                                    allowing flexibility to customize content creation to maximize growth in a single, or multiple areas. 
+
                                 </p>
-                                <h4>DATA + PEOPLE = POWER</h4>
+                                <h4>Technical discussion</h4>
                                 <p>
-                                    <a
-                                        target="_blank"
-                                        href="https://unbreak.info/team"
-                                        >Communication Unbreakdown</a
-                                    >, our Data Science capstone team, has
-                                    paired grassroots organizing with
-                                    cutting-edge data science to help community
-                                    organizers reach target populations for
-                                    civic engagement. Our solution helped
-                                    People’s Action reach 33% more conflicted
-                                    voters in the last two weeks of the U.S.
-                                    presidential election in five key swing
-                                    states where the technology was used.
-                                </p>
-                                <p>
-                                    The technology was also used for the Georgia
-                                    Senate runoff. During the final days of
-                                    voting, conflicted voters were found in 45%
-                                    of people contacted compared to a
-                                    human-informed control group of 18%.
+                                    For an interactive and agile system as ours, where emphasis is placed not just on accuracy, but also on robustness and interactivity, 
+                                    we needed to design a very scalable data engineering pipeline.
+
+                                    At MakeSense, raw data from Twitch gets processed from the backend and gets displayed in a user-friendly manner on the front-end.
+                                    In MakeSense we have used two different sets of google cloud platform instances. The first instance, is a GPU instance where we trained our BERT NLP models. 
+                                    The second GCP instance is a non-GPU instance which hosts our real time Twitch listener scripts along with the back-end webserver code. 
+                                    We consume data from Twitch in two different ways. The first is the set of unannotated realtime and recorded chat messages are consumed by our Twitch listener API. 
+                                    The second set of data is the metadata for the streamers. After cleansing and preprocessing, the data is moved to a SQLite database which then acts as a data 
+                                    store for our entire project. We use a double-fine tuning Transfer Learning approach to train a Base-BERT model with masked language modeling Sentiment Classification 
+                                    tasks using PyTorch and the Transformers library by Hugging Face.
+                                    
+                                    Finally, MakeSense used advanced Javascriptting techniques to enhance interactivity and user-friendliness of the front-end. We used jQuery in combination 
+                                    with Ajax to make asynchronous calls from our various end-points to the webserver. 
+                                    We then use a combination of D3 library and bootstrap container layouts for our interactive plotting and visualization needs.
+                                    These techniques are well suited for MakeSense because of their scalability, widespread adoption and visual appeal. 
+                                    The only downside is that there is a very significant learning curve with jQuery, Ajax and particularly D3. 
                                 </p>
                                 <div class="project-links">
                                     <a
