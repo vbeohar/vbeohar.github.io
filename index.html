@@ -238,6 +238,10 @@
                                     <div class="tooltip">
                                         <img class="small-square-img" src="images/icons/tech/d3.jpeg"/>
                                         <span class="tooltiptext">D3.js</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="small-square-img" src="images/icons/tech/huggingface.png"/>
+                                        <span class="tooltiptext">HuggingFace</span>
                                     </div>                                    
                                 </div>
                             </div>
@@ -270,22 +274,27 @@
                         <!-- End .project-image -->
                         <div class="col-sm-7 project-info" align="left">
                             <h3>
-                                MakeSense - Twitch listener and sentiment analysis
+                                An end-to-end bird detection pipeline using Yolo v4 and Keras
                             </h3>
                             <p>
-                                Twitch is a live streaming service and global community 
-                                for content spanning gaming, entertainment, music, sports, 
-                                and more. As of August 2022, it had 9.2 million monthly streamers, 
-                                140 million active monthly users. Twitch's top streamers 
-                                earned over $30,000 a month from their streaming 
-                                and content channels on the site. 
+                                In our final project for the deep learning on the edge (w251) course at Berkeley, we developed a model to identify the presence and species of backyard birds.
+                                We constructed a compact model for rational edge deployment using Yolov4 Darknet model and fine tuned it on a large dataset of most common 700 species of birds found in North America (NABirds database by allaboutbirds.com)
                             </p>
                             <div id="more-unbreak">
                                 <p>
-                                    Our MIDS capstone, product attempted to  provide additional insights 
-                                    to Twitch’s analytics by interpreting chat behavior and providing 
-                                    sentiment scores of chat messages during a stream.
+                                    We narrowed the Yolo model training to 15 most common species in New England, Mid-Atlantic and North West for our training dataset. The dataset preloaded with Bounding Boxes - which proved to be an excellent time saver for training neural nets such as Yolo! 
                                 </p>
+                                <h4>Technical discussion</h4>
+                                <p>
+                                    We used CudNN with half precision on a V100 GPU instance on the IBM cloud for training our Yolov4 model. We took approximately 118.6 hours for the entire model training. 
+                                    We used Keras with TensorFlow for inference of model results. For this, we converted the YoloV4 weights to .h5 for use in Keras and for simplicity of deploying the final model on a Cubietruck 3 edge device. 
+                                </p>
+                                <p>
+                                    We used OpenCV in combination with Keras (Tensorflow in the backend) to read image streams, and then used the converted Yolov4 model weights from training to make predictions
+                                </p>
+                                <p>
+                                    Our final output was a text file for all birds that were detected by the model along with their species and a model accuracy prediction number. 
+                                </p>                                
                                 <div class="project-links">
                                     <a href="https://unbreak.info/case-study/data-engineering"
                                         data-width="1000px"
