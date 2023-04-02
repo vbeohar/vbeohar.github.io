@@ -5,13 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
+    <title>VB - Portfolio</title>
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="images/icons/Asset 4.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/smoothness/jquery-ui-1.9.0.custom.css" rel="stylesheet">
+    <script language="javascript" type="text/javascript" src="jquery-1.8.2.js"></script>
+    <script src="js/jquery-ui-1.9.0.custom.js"></script>    
 </head>
 
 <body>
@@ -78,11 +81,24 @@
                     <p>
                         <p>Hi, I'm Vaibhav. I'm a hands-on technology professional with experience in software engineering (front-end and back-end), data science and finance & accounting. I'm an experienced practitioner with proven record in design, development and delivery of complex software systems and machine learning models.</p>
 
-                        <p>In my current role, I work as a Data Scientist. I have created and maintained supervised and unsupervised machine learnings models, including working on some interesting natural language processing use cases.</p>
+                        <p>In my current role, I work as a Data Scientist where I create and maintain supervised and unsupervised machine learnings models; and work on some interesting natural language processing use cases.</p>
                         
                         <p>I am also experienced in making data visualization dashboards using Tableau, D3.js, Javascript and jQuery and can create full-stack enterprise level websites with deep knowledge of data engineering pipelines, integrating back-end as well as front-end modules.</p>
                          
                         <p>I've also experienced deep involvement with the annual finance planning & budgeting cycles, month-end accounting close and FP&A processes, and have expertise of automating those tasks with Anaplan, a cloud based EPM software.</p>
+
+                        <!-- I'm a skilled and experienced professional with wide ranging exposure across industries and verticals. I have worked as a Software Engineer in Telecom, Order, Revenue and Billing Management domains, as a Corporate Finance/Accounting professional in the Insurance domain; and now applying that experience in FP&A/Management Consulting space as a Data Scientist and EPM (Anaplan) professional.
+
+                        In my current role, I am working as a Data Scientist where I perform tasks such as monthly model runs for active/winback/whitespace/lost clients (using Random Forest), using Logistic Regression to map use-cases to clients and being involved with a Natural Language Processing (NLP) model to match clients to use-cases using semantic information extraction and word embedding vectors (Spacy, word2vec etc). 
+
+                        Knowledge in NLP modeling and fine-tuning BERT and similar large language models using Tensorflow and PyTorch. Experienced in making data visualization and dashboard using Tableau, D3.js, Javascript and jQuery.
+
+                        I'm also deeply involved in the annual finance planning & budgeting cycle by performing various EPM tasks using my expertise with Anaplan.
+                        
+                        -  Financial Planning & Analysis (FP&A), Corporate Finance, Business Development
+                        - Data Science, Artificial Intelligence, Advance Analytics, Machine Learning, Python, R and SQL
+                        - CFA Level II Candidate 
+                        -->
                     </p>
                 </div>
             </div>
@@ -1513,13 +1529,19 @@
                             <h3>University of California, Berkeley</h3>
                             <h4>Master of Information and Data Science</h4>
                             <p>
-                                <a
+                                <!-- <a
                                     href="/resources/VB_SSR_TSRPT.pdf"
                                     data-width="760px"
                                     data-height="700px"
                                     class="glightbox4"
                                     >Course Transcript
-                                </a>
+                                </a> -->
+                                <a href="#" id="trigger">course transcript</a>
+                                <div id="dialog" style="display:none">
+                                    <div>
+                                    <iframe src="/resources/VB_SSR_TSRPT.pdf"></iframe>
+                                    </div>
+                                </div>                                 
                             </p>
                         </div>
                         <div class="education-entity__dates">
@@ -1695,6 +1717,13 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function() {
+          $('#trigger').click(function(){
+            $("#dialog").dialog();
+          }); 
+        });                  
+      </script>    
 </body>
 
 </html>
