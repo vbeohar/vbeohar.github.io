@@ -1537,11 +1537,11 @@
                                     >Course Transcript
                                 </a> -->
                                 <a href="/resources/VB_SSR_TSRPT.pdf" id="trigger">course transcript</a>
-                                <div id="dialog" style="display:none">
+                                <!-- <div id="dialog" style="display:none">
                                     <div>
                                     <iframe src="/resources/VB_SSR_TSRPT.pdf"></iframe>
                                     </div>
-                                </div>                                 
+                                </div>                                  -->
                             </p>
                         </div>
                         <div class="education-entity__dates">
@@ -1718,11 +1718,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
     <script language="javascript" type="text/javascript">
-        $(document).ready(function() {
-          $('#trigger').click(function(){
-            $("#dialog").dialog();
-          }); 
-        });                  
+       
+        
+        $('a').click(function() {
+            window.open($(this).attr('href'),'title', 'width=800, height=700');
+            return false;
+        });
       </script>    
 </body>
 
