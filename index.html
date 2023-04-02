@@ -1536,7 +1536,10 @@
                                     class="glightbox4"
                                     >Course Transcript
                                 </a> -->
-                                <a href="/resources/VB_SSR_TSRPT.pdf" id="trigger">course transcript</a>
+                                <div id="myModal" class="modal">
+                                        <a href="/resources/VB_SSR_TSRPT.pdf" id="trigger">course transcript</a>
+                                </div>                                
+                                
                                 <!-- <div id="dialog" style="display:none">
                                     <div>
                                     <iframe src="/resources/VB_SSR_TSRPT.pdf"></iframe>
@@ -1719,12 +1722,22 @@
     <script src="js/scripts.min.js"></script>
     <script language="javascript" type="text/javascript">
        
-        
-        $('a').click(function() {
-             $(this).modal();
-            return false;
-        });        
-      </script>    
+				// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2
+				var modal = document.getElementById("myModal");
+				var span = document.getElementsByClassName("close")[0];
+
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+
+				window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+				} 
+       
+       
+    </script>    
 </body>
 
 </html>
