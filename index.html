@@ -1761,13 +1761,13 @@
     <div id="contact">
         <h2>Get in Touch</h2>
         <div id="contact-form">
-            <!-- <form method="POST" action="https://formspree.io/email@email.com"> -->
-            <form method="POST" action="https://form.jotform.com/230696780017056">                
+            <form method="POST" action="https://formspree.io/email@email.com">
+            <!-- <form method="POST" action="https://form.jotform.com/230696780017056">                
                 <input type="hidden" name="_subject" value="Contact request from personal website" />
                 <input type="email" name="_replyto" placeholder="Your email" required>
                 <textarea name="message" placeholder="Your message" required></textarea>
                 <button type="submit">Send</button>
-            </form>
+            </form> -->
         </div>
         <!-- End #contact-form -->
     </div>
@@ -1846,114 +1846,99 @@
                     
        
     </script> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-        <script>
-            var lightbox = GLightbox();
-            lightbox.on("open", (target) => {
-                console.log("lightbox opened");
-            });
-            var lb_firebert = GLightbox({
-                selector: ".glightbox-firebert",
-            });
-            var lb_unbreak = GLightbox({
-                selector: ".glightbox-unbreak",
-            });
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        var lightbox = GLightbox();
+        lightbox.on("open", (target) => {
+            console.log("lightbox opened");
+        });
+        var lb_firebert = GLightbox({
+            selector: ".glightbox-firebert",
+        });
+        var lb_unbreak = GLightbox({
+            selector: ".glightbox-unbreak",
+        });
 
-            var lightboxDescription = GLightbox({
-                selector: ".glightbox2",
-            });
-            var lightboxVideo = GLightbox({
-                selector: ".glightbox3",
-            });
-            lightboxVideo.on("slide_changed", ({ prev, current }) => {
-                console.log("Prev slide", prev);
-                console.log("Current slide", current);
+        var lightboxDescription = GLightbox({
+            selector: ".glightbox2",
+        });
+        var lightboxVideo = GLightbox({
+            selector: ".glightbox3",
+        });
+        lightboxVideo.on("slide_changed", ({ prev, current }) => {
+            console.log("Prev slide", prev);
+            console.log("Current slide", current);
 
-                const { slideIndex, slideNode, slideConfig, player } = current;
+            const { slideIndex, slideNode, slideConfig, player } = current;
 
-                if (player) {
-                    if (!player.ready) {
-                        // If player is not ready
-                        player.on("ready", (event) => {
-                            // Do something when video is ready
-                        });
-                    }
-
-                    player.on("play", (event) => {
-                        console.log("Started play");
-                    });
-
-                    player.on("volumechange", (event) => {
-                        console.log("Volume change");
-                    });
-
-                    player.on("ended", (event) => {
-                        console.log("Video ended");
+            if (player) {
+                if (!player.ready) {
+                    // If player is not ready
+                    player.on("ready", (event) => {
+                        // Do something when video is ready
                     });
                 }
-            });
 
-            var lightboxInlineIframe = GLightbox({
-                selector: ".glightbox4",
-            });
+                player.on("play", (event) => {
+                    console.log("Started play");
+                });
 
-            /* var exampleApi = GLightbox({ selector: null });
-        exampleApi.insertSlide({
-            href: 'https://picsum.photos/1200/800',
-        });
-        exampleApi.insertSlide({
-            width: '500px',
-            content: '<p>Example</p>'
-        });
-        exampleApi.insertSlide({
-            href: 'https://www.youtube.com/watch?v=WzqrwPhXmew',
-        });
-        exampleApi.insertSlide({
-            width: '200vw',
-            content: document.getElementById('inline-example')
-        });
-        exampleApi.open(); */
-        </script>
+                player.on("volumechange", (event) => {
+                    console.log("Volume change");
+                });
 
-        <script>
-            function includeHTML() {
-                var z, i, elmnt, file, xhttp;
-                /* Loop through a collection of all HTML elements: */
-                z = document.getElementsByTagName("*");
-                for (i = 0; i < z.length; i++) {
-                    elmnt = z[i];
-                    /*search for elements with a certain atrribute:*/
-                    file = elmnt.getAttribute("w3-include-html");
-                    if (file) {
-                        /* Make an HTTP request using the attribute value as the file name: */
-                        xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function () {
-                            if (this.readyState == 4) {
-                                if (this.status == 200) {
-                                    elmnt.innerHTML = this.responseText;
-                                }
-                                if (this.status == 404) {
-                                    elmnt.innerHTML = "Page not found.";
-                                }
-                                /* Remove the attribute, and call this function once more: */
-                                elmnt.removeAttribute("w3-include-html");
-                                includeHTML();
+                player.on("ended", (event) => {
+                    console.log("Video ended");
+                });
+            }
+        });
+
+        var lightboxInlineIframe = GLightbox({
+            selector: ".glightbox4",
+        });
+
+
+    </script>
+
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
                             }
-                        };
-                        xhttp.open("GET", file, true);
-                        xhttp.send();
-                        /* Exit the function: */
-                        return;
-                    }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    };
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
                 }
             }
-        </script>
+        }
+    </script>
 
-        <script>
-            includeHTML();
-        </script>    
+    <script>
+        includeHTML();
+    </script>    
     
 
 </body>
