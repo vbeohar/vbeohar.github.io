@@ -408,11 +408,27 @@
                                 and content channels on the site. 
                             </p>
                             <div id="more-unbreak">
-                                <p>
-                                    Our MIDS capstone, product attempted to  provide additional insights 
-                                    to Twitch’s analytics by interpreting chat behavior and providing 
-                                    sentiment scores of chat messages during a stream.
-                                </p>
+                            <p>
+                                Our capstone project titled "MakeSense" at UC Berkeley's MIDS coursework in fall 2022 attempted to  provide additional insights 
+                                to Twitch’s analytics by (1) interpreting chat behavior and running  sentiment analysis on livestream chats and scoring those chats 
+                                (2) translating performance metrics of Twitch streams into a scoring system and (3) allowing flexibility to customize content creation 
+                                to maximize growth in a single, or multiple areas.
+                            </p>
+                            <h4>Technical discussion</h4>
+                            <p>
+                                For an interactive and agile system as ours, we emphasized on a scalable data engineering pipeline to consume and process Twitch chats, 
+                                a BERT based masked language modeling Sentiment Classification layer and a jQuery/Ajax/D3.js based front-end. 
+                            </p>
+                            <p>
+                                We used two different sets of google cloud platform (GCP) instances: (a) GPU based instance to train to BERT NLP models and (b) a non-GPU instance 
+                                to host real time Twitch listener scripts along with the back-end webserver code. 
+                                On the GPU layer, We used a double-fine tuning Transfer Learning approach to train a Base-BERT model with masked language modeling Sentiment Classification 
+                                tasks using PyTorch and the Transformers library by Hugging Face.
+                            </p>
+                            <p>
+                                Finally, we used a combination of D3 library and bootstrap container layouts for our interactive plotting and visualization needs.
+                            </p>
+
                                 <div class="project-links">
                                     <a href="https://unbreak.info/case-study/data-engineering"
                                         data-width="1000px"
