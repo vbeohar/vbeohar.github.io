@@ -1627,16 +1627,10 @@
                             <h3>University of California, Berkeley</h3>
                             <h4>Master of Information and Data Science</h4>
                             <p>
-                                <!-- <a
-                                    href="/resources/VB_SSR_TSRPT.pdf"
-                                    data-width="760px"
-                                    data-height="700px"
-                                    class="glightbox4"
-                                    >Course Transcript
-                                </a> -->
-                                <div id="myBtn">
+                                <a href="/resources/VB_SSR_TSRPT.pdf" data-width="760px" data-height="700px" class="glightbox4">Course Transcript</a>
+                                <!-- <div id="myBtn">
                                         <a href="/resources/VB_SSR_TSRPT.pdf">course transcript</a>
-                                </div>
+                                </div> -->
                                 <!-- Trigger/Open The Modal -->
                                 <!-- <button id="myBtn">show transcript</button> -->
                                 <!-- <a href="/resources/VB_SSR_TSRPT.pdf" id="myBtn">course transcript</a> -->
@@ -1851,7 +1845,117 @@
                 }
                     
        
-    </script>    
+    </script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+        <script>
+            var lightbox = GLightbox();
+            lightbox.on("open", (target) => {
+                console.log("lightbox opened");
+            });
+            var lb_firebert = GLightbox({
+                selector: ".glightbox-firebert",
+            });
+            var lb_unbreak = GLightbox({
+                selector: ".glightbox-unbreak",
+            });
+
+            var lightboxDescription = GLightbox({
+                selector: ".glightbox2",
+            });
+            var lightboxVideo = GLightbox({
+                selector: ".glightbox3",
+            });
+            lightboxVideo.on("slide_changed", ({ prev, current }) => {
+                console.log("Prev slide", prev);
+                console.log("Current slide", current);
+
+                const { slideIndex, slideNode, slideConfig, player } = current;
+
+                if (player) {
+                    if (!player.ready) {
+                        // If player is not ready
+                        player.on("ready", (event) => {
+                            // Do something when video is ready
+                        });
+                    }
+
+                    player.on("play", (event) => {
+                        console.log("Started play");
+                    });
+
+                    player.on("volumechange", (event) => {
+                        console.log("Volume change");
+                    });
+
+                    player.on("ended", (event) => {
+                        console.log("Video ended");
+                    });
+                }
+            });
+
+            var lightboxInlineIframe = GLightbox({
+                selector: ".glightbox4",
+            });
+
+            /* var exampleApi = GLightbox({ selector: null });
+        exampleApi.insertSlide({
+            href: 'https://picsum.photos/1200/800',
+        });
+        exampleApi.insertSlide({
+            width: '500px',
+            content: '<p>Example</p>'
+        });
+        exampleApi.insertSlide({
+            href: 'https://www.youtube.com/watch?v=WzqrwPhXmew',
+        });
+        exampleApi.insertSlide({
+            width: '200vw',
+            content: document.getElementById('inline-example')
+        });
+        exampleApi.open(); */
+        </script>
+
+        <script>
+            function includeHTML() {
+                var z, i, elmnt, file, xhttp;
+                /* Loop through a collection of all HTML elements: */
+                z = document.getElementsByTagName("*");
+                for (i = 0; i < z.length; i++) {
+                    elmnt = z[i];
+                    /*search for elements with a certain atrribute:*/
+                    file = elmnt.getAttribute("w3-include-html");
+                    if (file) {
+                        /* Make an HTTP request using the attribute value as the file name: */
+                        xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4) {
+                                if (this.status == 200) {
+                                    elmnt.innerHTML = this.responseText;
+                                }
+                                if (this.status == 404) {
+                                    elmnt.innerHTML = "Page not found.";
+                                }
+                                /* Remove the attribute, and call this function once more: */
+                                elmnt.removeAttribute("w3-include-html");
+                                includeHTML();
+                            }
+                        };
+                        xhttp.open("GET", file, true);
+                        xhttp.send();
+                        /* Exit the function: */
+                        return;
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            includeHTML();
+        </script>    
+    
+
 </body>
 
 </html>
