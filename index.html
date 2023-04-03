@@ -269,63 +269,35 @@
                         <div class="col-sm-7 project-info" align="left">
                             <h3>Using Google Universal Sentence Encoder to perform classification by finding semantically similar media articles</h3>
                             <p>
-                                In this project we used D3-Force library to visualize and simulate Star Wars interactions. The D3 library creates “physical simulation of charged particles to generate a network layout”
+                                Google's Universal Sentence Encoder encodes text into high dimensional vectors that 
+                                can be used for text classification, semantic similarity, clustering, and other natural language tasks.
                             </p>
                             <div id="more-unbreak">
                                 <p>
-                                    For the visualization, we used a dataset with node and link annotations for each episode. 
-                                    This included: Social network with links between characters defined by characters speaking in the same scene. 
-                                    Social network with links between characters defined by the number of times they are mentioned in the same scene 
-                                    Social network with character links and mentions for all 6 episodes
+                                    In this project, I used the pre-trained sentence transformer encoder based model from TensorFlow-Hub to create embedding vectors of a large corpus of 
+                                    text documents and then use those vectors to match with a set of queries thereby performing classification by finding semantically similar sentences.
                                 </p>
                                 <p>
-                                    Overall, we aimed to help understand the “social network” of the Star Wars franchise and answer questions related to character interactions and importance.
+                                    The idea here was to download news media articles from Dow Jones, and then classify those documents to a set a service lines offered by the company. 
+                                    Each service line was annonated by a set of keywords. The keywords were also encoded into vectors using the sentence encoder model and matched to the 
+                                    media article vectors using cosine similarity. 
+
+                                    In this manner, we were able to classify most recent news articles to their specific "topics" and make informed decisions.
                                 </p>
                                 <div class="project-links">
                                     <a
-                                        href="resources/D3-Force_W209_Final_Presentation.pdf"
+                                        href="resources/use_de_pipeline.png"
                                         data-width="1000px"
                                         data-height="700px"
                                         class="glightbox-unbreak lnk-blue"
-                                        >Read the final presentation
+                                        >Data engineering pipeline
                                         <i
                                             class="fa fa-cogs"
                                             aria-hidden="true"
                                         ></i></a
                                     >|
-                                    <a
-                                        id="unbreak-video"
-                                        href="https://www.youtube.com/watch?v=bJVJ_7CRgms"
-                                        data-width="1000px"
-                                        data-height="700px"
-                                        class="glightbox3 lnk-blue"
-                                        >Watch a video
-                                        <i
-                                            class="fa fa-youtube-play"
-                                            aria-hidden="true"
-                                        ></i>
-                                    </a>|
-                                    <a
-                                        href="https://observablehq.com/@vbeohar/star-wars-visualization-with-network-metrics"
-                                        data-width="1000px"
-                                        data-height="700px"
-                                        class="glightbox-unbreak lnk-blue"
-                                        >Play with D3-Force
-                                        <i
-                                            class="fa fa-bullseye"
-                                            aria-hidden="true"
-                                        ></i></a
-                                    >|
-                                    <a
-                                        class="lnk-blue"
-                                        target="_blank"
-                                        href="https://github.com/vbeohar/w209-spring2022-final-proj.git"
-                                        >Check the github repo
-                                        <i
-                                            class="fa fa-sign-in"
-                                            aria-hidden="true"
-                                        ></i
-                                    ></a>
+                                    <a class="lnk-blue" target="_blank" href="resources/use_workflow.png">Workflow details
+                                        <i class="fa fa-sign-in" aria-hidden="true"></i></a>
                                 </div>
 
 
